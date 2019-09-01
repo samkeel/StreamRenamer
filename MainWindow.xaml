@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Renamer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Renamer" Height="210" Width="250" ResizeMode="CanMinimize">
     <Grid>
-        
+        <Label x:Name="label" Content="Example static: CV123-EQ-" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="196"/>
+        <Label x:Name="label1" Content="Example count: 1 will output 0001" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="196"/>
+        <TextBox x:Name="textBoxStatic" HorizontalAlignment="Left" Height="23" 
+                 Margin="60,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146">
+            <TextBox.ToolTip>
+                <ToolTip>Enter static value</ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="textBoxCount" HorizontalAlignment="Left" Height="23" 
+                 Margin="60,94,0,0" TextWrapping="Wrap" Text="{Binding Path=ListCount}" 
+                 VerticalAlignment="Top" Width="146"
+                 PreviewTextInput="NumberValidationTextBox">
+            <TextBox.ToolTip>
+                <ToolTip>Enter number values only</ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <CheckBox x:Name="checkBox" Content="Reorder the list?" 
+                  HorizontalAlignment="Left" Margin="60,122,0,0" VerticalAlignment="Top">
+            <CheckBox.ToolTip>
+                <ToolTip>Check this box if the outputted list is not already in the order required and needs to be sorted</ToolTip>
+            </CheckBox.ToolTip>
+        </CheckBox>
+        <Button x:Name="runBTN" Content="Run" HorizontalAlignment="Left" Margin="131,142,0,0" VerticalAlignment="Top" Width="75" Click="RunBTN_Click"/>
+        <Label x:Name="textBlockStatic" Content="Static:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="71"/>
+        <Label x:Name="label2_Copy" Content="Count:" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="71"/>
+
     </Grid>
 </Window>

@@ -13,7 +13,7 @@ namespace Renamer
         {
             var dictionary = new Dictionary<string, string>();
             var newValues = new Dictionary<string, string>();
-
+            //convert string to integer
             int cValue = Convert.ToInt32(countValue);
 
             string key = "";
@@ -25,6 +25,7 @@ namespace Renamer
                 while (!sr.EndOfStream)
                 {
                     string[] line = str.Split('|');
+                    //add split string to dictionary values
                     dictionary.Add(line[0], line[1]);
                 }
             }
@@ -41,6 +42,7 @@ namespace Renamer
                 {
                     key = ele.Key.ToString();
                     val = staticValue + cValue.ToString("0000");
+                    //unable to reorder dictionary, sort results then
                     //add values to new dictionary
                     newValues.Add(key, val);
                     cValue++;
@@ -58,6 +60,7 @@ namespace Renamer
                     cValue++;
                 }
             }
+            //override selectedfile with the new data
             WriteText(FPath, newValues);
         }
 
